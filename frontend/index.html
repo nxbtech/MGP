@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>MyGolfPulse - Recherche de Golfs</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Leaflet CSS and JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Custom JS File -->
+  <script src="golf_finder.js"></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header id="header" class="header sticky-top">
+    <div class="branding d-flex align-items-center">
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <h1>My Golf Pulse</h1>
+        </a>
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Accueil</a></li>
+            <li><a href="#contact">Connexion</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+
+    <!-- Hero Section with Search Bar -->
+    <section id="hero" class="hero section light-background">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+            <h1>Les Golfs <span>du Monde</span></h1>
+            <p>Découvrez, évaluez et réservez votre prochaine aventure golfique avec notre guide complet des parcours de golf à travers le globe.</p>
+            <div class="search-bar-container d-flex">
+              <!-- Search Bar -->
+              <form class="search-bar-form d-flex w-100">
+                <input id="search-input" class="search-bar-input form-control me-2" type="search" placeholder="Recherchez un golf" aria-label="Search">
+                <button class="search-bar-button btn btn-outline-success" type="submit">Rechercher</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<section id="favorite-destinations" class="favorite-destinations section">
+  <div class="container">
+    <div class="row gy-4">
+      
+      <!-- Destination 1 : États-Unis -->
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="destination-item position-relative">
+          <div class="icon">
+            <img src="assets/img/destination/usa-destination.jpg" alt="Icone États-Unis" class="img-fluid destination-image">
+          </div>
+          <h4><a href="#" class="stretched-link">États-Unis</a></h4>
+        </div>
+      </div><!-- End Destination Item -->
+
+      <!-- Destination 2 : Écosse -->
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="destination-item position-relative">
+          <div class="icon">
+            <img src="assets/img/destination/ecosse-destination.jpg" alt="Icone Écosse" class="img-fluid destination-image">
+          </div>
+          <h4><a href="#" class="stretched-link">Écosse</a></h4>
+        </div>
+      </div><!-- End Destination Item -->
+
+      <!-- Destination 3 : Afrique du Sud -->
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="destination-item position-relative">
+          <div class="icon">
+            <img src="assets/img/destination/afs-destination.jpg" alt="Icone Afrique du Sud" class="img-fluid destination-image">
+          </div>
+          <h4><a href="#" class="stretched-link">Afrique du Sud</a></h4>
+        </div>
+      </div><!-- End Destination Item -->
+
+      <!-- Destination 4 : Australie -->
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="destination-item position-relative">
+          <div class="icon">
+            <img src="assets/img/destination/australie-destination.jpg" alt="Icone Australie" class="img-fluid destination-image">
+          </div>
+          <h4><a href="#" class="stretched-link">Australie</a></h4>
+        </div>
+      </div><!-- End Destination Item -->
+
+    </div><!-- End row -->
+  </div><!-- End container -->
+</section><!-- /Nos Destinations Favorites Section -->
+
+<!-- About Section -->
+<section id="about" class="about section light-background">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>À Propos</h2>
+    <p><span>Découvrez</span> <span class="description-title">MyGolfPulse</span></p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="row gy-3">
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <img src="assets/img/about-imahe.jpg" alt="MyGolfPulse" class="img-fluid">
+      </div>
+
+      <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="about-content ps-0 ps-lg-3">
+          <h3>Votre partenaire ultime pour explorer les meilleures destinations de golf.</h3>
+          <p class="fst-italic">
+            Chez MyGolfPulse, nous sommes passionnés par le golf et nous nous engageons à vous fournir les meilleures informations et recommandations pour vos aventures golfiques.
+          </p>
+          <ul>
+            <li>
+              <i class="bi bi-diagram-3"></i>
+              <div>
+                <h4>Des Destinations de Rêve</h4>
+                <p>Explorez les parcours de golf les plus prestigieux et pittoresques à travers le monde.</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-fullscreen-exit"></i>
+              <div>
+                <h4>Informations Complètes et Fiables</h4>
+                <p>Accédez à des données précises et détaillées sur chaque destination, y compris les avis des golfeurs.</p>
+              </div>
+            </li>
+          </ul>
+          <p>
+            Notre mission est de rendre chaque expérience de golf inoubliable. Que vous soyez un golfeur débutant ou un expert, MyGolfPulse est votre guide de confiance pour planifier des voyages de golf parfaits.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- /About Section -->
+
+   <!-- Stats Section -->
+<section id="stats" class="stats section">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="bi bi-globe"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="38" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Millions de golfeurs</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="bi bi-geo-alt"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="34000" data-purecounter-duration="1" class="purecounter"></span>
+          <p>parcours de golf</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="bi bi-trophy"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Majeurs de golf chaque année</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="bi bi-cash-stack"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Valorisation de l'industrie</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Stats Section -->
+    <!-- Clients Section -->
+    <section id="clients" class="clients section light-background">
+
+      <div class="container">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 500
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 40
+                },
+                "480": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 60
+                },
+                "640": {
+                  "slidesPerView": 4,
+                  "spaceBetween": 80
+                },
+                "992": {
+                  "slidesPerView": 6,
+                  "spaceBetween": 120
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Clients Section -->
+
+   <!-- Contact Section -->
+<section id="contact" class="contact section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p><span>Besoin d'aide?</span> <span class="description-title">Contactez-nous</span></p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-5">
+
+        <div class="info-wrap">
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <i class="bi bi-geo-alt flex-shrink-0"></i>
+            <div>
+              <h3>Adresse</h3>
+              <p>123 Golf Street, Paris, France 75008</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <i class="bi bi-telephone flex-shrink-0"></i>
+            <div>
+              <h3>Appelez-nous</h3>
+              <p>+33 1 23 45 67 89</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <i class="bi bi-envelope flex-shrink-0"></i>
+            <div>
+              <h3>Envoyez-nous un email</h3>
+              <p>contact@mygolfpulse.com</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.999882183696!2d2.2944813156740463!3d48.85884497928712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fdfdf88e2ff%3A0xbb9e2f0e8ba8651b!2s123%20Golf%20Street%2C%20Paris%2C%20France%2075008!5e0!3m2!1sen!2sus!4v1626431784161!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-4">
+
+            <div class="col-md-6">
+              <label for="name-field" class="pb-2">Votre nom</label>
+              <input type="text" name="name" id="name-field" class="form-control" required="">
+            </div>
+
+            <div class="col-md-6">
+              <label for="email-field" class="pb-2">Votre email</label>
+              <input type="email" class="form-control" name="email" id="email-field" required="">
+            </div>
+
+            <div class="col-md-12">
+              <label for="subject-field" class="pb-2">Sujet</label>
+              <input type="text" class="form-control" name="subject" id="subject-field" required="">
+            </div>
+
+            <div class="col-md-12">
+              <label for="message-field" class="pb-2">Message</label>
+              <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <div class="loading">Chargement</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Votre message a été envoyé. Merci!</div>
+
+              <button type="submit">Envoyer le message</button>
+            </div>
+
+          </div>
+        </form>
+      </div><!-- End Contact Form -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Contact Section -->
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Rejoignez Notre Newsletter</h4>
+            <p>Abonnez-vous à notre newsletter et recevez les dernières nouvelles sur nos produits et services!</p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email" placeholder="Votre email"><input type="submit" value="S'abonner"></div>
+              <div class="loading">Chargement</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Votre demande d'abonnement a été envoyée. Merci!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">MyGolfPulse</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>123 Golf Street</p>
+            <p>Paris, France 75008</p>
+            <p class="mt-3"><strong>Téléphone:</strong> <span>+33 1 23 45 67 89</span></p>
+            <p><strong>Email:</strong> <span>contact@mygolfpulse.com</span></p>
+          </div>
+        </div>
+  
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Liens Utiles</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Accueil</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">À propos</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Conditions d'utilisation</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Nos Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Exploration des parcours de golf</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Réservation de tee times</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Gestion d'événements</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Conseils de voyage</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-lg-4 col-md-12">
+          <h4>Suivez-nous</h4>
+          <p>Suivez-nous sur les réseaux sociaux pour les dernières mises à jour et offres spéciales.</p>
+          <div class="social-links d-flex">
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">MyGolfPulse</strong> <span>Tous droits réservés</span></p>
+      <div class="credits">
+      </div>
+    </div>
+  
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="golf_finder.js"></script>
+
+</body>
+
+</html>
